@@ -1,5 +1,5 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
-
+FILESEXTRAPATHS_prepend_cetibox := "${THISDIR}/${PN}/cetibox:"
 require inc/xt_shared_env.inc
 
 RENESAS_BSP_URL = "git://github.com/xen-troops/linux.git"
@@ -13,10 +13,9 @@ SRC_URI_append = " \
 "
 
 SRC_URI_append_cetibox = " \
-    git://github.com/xen-troops/linux.git;branch=${BRANCH} \
     file://r8a7795-h3ulcb-cetibox-dom0.dts;subdir=git/arch/${ARCH}/boot/dts/renesas \
     file://r8a7795-h3ulcb-cetibox-domd.dts;subdir=git/arch/${ARCH}/boot/dts/renesas \
-    file://defconfig_cb \
+    file://defconfig \
   "
 
 KERNEL_DEVICETREE_salvator-x-m3-xt = " \
