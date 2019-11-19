@@ -14,6 +14,8 @@ python __anonymous () {
 
 SRC_URI = " \
     repo://github.com/xen-troops/manifests;protocol=https;branch=master;manifest=${XT_MANIFEST_FOLDER}/domd.xml;scmdata=keep \
+    git://github.com/gbmhunter/YoctoHelloWorldApp;protocol=https;branch=master; \
+    git://github.com/iusyk/meta-calc;protocol=https;branch=master; \
 "
 
 XT_QUIRK_UNPACK_SRC_URI += " \
