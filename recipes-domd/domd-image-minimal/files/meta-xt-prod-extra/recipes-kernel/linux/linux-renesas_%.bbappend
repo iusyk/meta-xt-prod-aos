@@ -1,5 +1,6 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 FILESEXTRAPATHS_prepend_cetibox := "${THISDIR}/${PN}/cetibox:"
+FILESEXTRAPATHS_prepend_crown := "${THISDIR}/${PN}/crown:"
 require inc/xt_shared_env.inc
 
 RENESAS_BSP_URL = "git://github.com/xen-troops/linux.git"
@@ -17,6 +18,13 @@ SRC_URI_append_cetibox = " \
     file://r8a7795-h3ulcb-cetibox-domd.dts;subdir=git/arch/${ARCH}/boot/dts/renesas \
     file://defconfig \
   "
+
+SRC_URI_append_crown = " \
+    file://r8a7795-h3ulcb-crown-dom0.dts;subdir=git/arch/${ARCH}/boot/dts/renesas \
+    file://r8a7795-h3ulcb-crown-domd.dts;subdir=git/arch/${ARCH}/boot/dts/renesas \
+    file://defconfig \
+  "
+
 
 KERNEL_DEVICETREE_salvator-x-m3-xt = " \
     renesas/r8a7795-h3ulcb-cetibox-dom0.dtb \
