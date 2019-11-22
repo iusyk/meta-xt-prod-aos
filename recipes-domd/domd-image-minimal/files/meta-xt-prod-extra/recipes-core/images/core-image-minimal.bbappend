@@ -7,6 +7,10 @@ IMAGE_INSTALL_append = " \
     libxenbe \
 "
 
+IMAGE_INSTALL_crown_append = " \
+  meta-calc\
+"
+
 python __anonymous () {
     if (d.getVar("AOS_VIS_PACKAGE_DIR", True) or "") == "":
         d.appendVar("IMAGE_INSTALL", "aos-vis")

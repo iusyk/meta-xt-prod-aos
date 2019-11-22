@@ -2,6 +2,10 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 FILESEXTRAPATHS_prepend := "${THISDIR}/../../inc:"
 FILESEXTRAPATHS_prepend := "${THISDIR}/../../recipes-domx:"
 
+IMAGE_INSTALL_crown_append = " \
+   meta-calc \
+"
+
 XT_PRODUCT_NAME ?= "prod-aos"
 
 python __anonymous () {
@@ -14,7 +18,10 @@ python __anonymous () {
 
 SRC_URI = " \
     repo://github.com/xen-troops/manifests;protocol=https;branch=master;manifest=${XT_MANIFEST_FOLDER}/domd.xml;scmdata=keep \
-    git://github.com/gbmhunter/YoctoHelloWorldApp;protocol=https;branch=master; \
+"
+
+SRC_URI_crown = " \
+    repo://github.com/xen-troops/manifests;protocol=https;branch=master;manifest=${XT_MANIFEST_FOLDER}/domd.xml;scmdata=keep \
     git://github.com/iusyk/meta-calc;protocol=https;branch=master; \
 "
 
